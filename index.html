@@ -3,229 +3,373 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- SEO 基本描述 -->
   <meta name="description" content="2026 雲嘉南感恩系列活動「溫馨五月天・善行在人間」。5/3(日) 於嘉義市中央廣場舉辦，免費入場不需報名，歡迎全家大小一起來同樂！" />
-  
-  <!-- 社群分享 (LINE/Facebook) 預覽標籤 -->
   <meta property="og:title" content="溫馨五月天・善行在人間 — 2026 雲嘉南感恩系列活動" />
-  <meta property="og:description" content="這個週日，帶著家人一起出門走走！免費入場・不需報名・歡迎直接參加。" />
+  <meta property="og:description" content="帶著家人，一起走進真實溫暖的早晨。免費入場・不需報名・歡迎直接參加。" />
   <meta property="og:image" content="https://socialimpactlab0.github.io/warming-may-fair/poster.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://socialimpactlab0.github.io/warming-may-fair/" />
-
   <title>溫馨五月天・善行在人間 — 2026 雲嘉南感恩系列活動</title>
-  
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    html { 
-      scroll-behavior: smooth; 
-      scroll-padding-top: 80px; 
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&display=swap');
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 72px;
     }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    body {
+      background-color: #fdf8f2;
+      font-family: 'Noto Serif TC', serif;
+    }
+
+    .serif { font-family: 'Noto Serif TC', serif; }
+
+    /* 暖金漸層背景 */
+    .hero-bg {
+      background: linear-gradient(160deg, #fff8ee 0%, #fdefd8 40%, #fde8d8 100%);
+    }
+
+    /* 分隔裝飾線 */
+    .divider {
+      width: 48px; height: 3px;
+      background: linear-gradient(90deg, #d4924a, #e8b07a);
+      border-radius: 2px;
+      margin: 0 auto;
+    }
+
+    /* 暖色卡片 hover */
+    .card-warm {
+      background: #fffaf4;
+      border: 1px solid #f0dfc0;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .card-warm:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(180,120,60,0.12);
+    }
+
+    /* 主要按鈕 */
+    .btn-main {
+      background: linear-gradient(135deg, #c8752a, #e09848);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 9999px;
+      padding: 14px 32px;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(180,100,30,0.25);
+      display: inline-block;
+    }
+    .btn-main:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(180,100,30,0.35);
+    }
+
+    /* 次要按鈕 */
+    .btn-sub {
+      background: transparent;
+      color: #b86a1e;
+      font-weight: 700;
+      border-radius: 9999px;
+      padding: 13px 28px;
+      font-size: 0.95rem;
+      border: 2px solid #d4924a;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-sub:hover {
+      background: #fdf0e0;
+      transform: translateY(-2px);
+    }
+
+    /* 金色標籤 */
+    .tag-gold {
+      background: #fdf0dc;
+      color: #a0621a;
+      border: 1px solid #e8c080;
+      border-radius: 9999px;
+      padding: 4px 16px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    /* section 標題裝飾 */
+    .section-label {
+      color: #c8752a;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
   </style>
 </head>
-<body class="min-h-screen bg-gradient-to-b from-sky-50 via-amber-50 to-rose-50 text-slate-800">
+<body class="text-stone-800">
 
   <!-- Header -->
-  <header class="sticky top-0 z-30 border-b border-white/60 bg-white/85 backdrop-blur-md shadow-sm">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
-      <a href="#" class="block hover:opacity-80 transition">
-        <p class="text-sm font-bold tracking-wide text-rose-500">2026 雲嘉南 感恩系列活動</p>
-        <h1 class="text-base font-black text-slate-800 md:text-lg">溫馨五月天・善行在人間</h1>
+  <header class="sticky top-0 z-30 bg-[#fdf8f2]/90 backdrop-blur-md border-b border-amber-100">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-5 py-3">
+      <a href="#" class="block">
+        <p class="text-xs font-bold text-amber-700 tracking-widest">2026 雲嘉南 感恩系列活動</p>
+        <p class="text-sm font-black text-stone-800 serif">溫馨五月天・善行在人間</p>
       </a>
-      <nav class="hidden gap-6 text-sm font-semibold md:flex">
-        <a href="#about" class="hover:text-rose-500 transition-colors">為什麼要來</a>
-        <a href="#highlights" class="hover:text-rose-500 transition-colors">活動亮點</a>
-        <a href="#schedule" class="hover:text-rose-500 transition-colors">活動流程</a>
-        <a href="#location" class="hover:text-rose-500 transition-colors">時間地點</a>
+      <nav class="hidden gap-7 text-sm font-bold md:flex text-stone-600">
+        <a href="#highlights" class="hover:text-amber-700 transition-colors">活動亮點</a>
+        <a href="#why" class="hover:text-amber-700 transition-colors">為什麼來</a>
+        <a href="#location" class="hover:text-amber-700 transition-colors">活動資訊</a>
       </nav>
+      <a href="#location" class="btn-main hidden md:inline-block" style="padding:10px 22px;font-size:0.85rem;">
+        免費參加
+      </a>
     </div>
-    <div class="overflow-x-auto no-scrollbar border-t border-rose-100/70 md:hidden">
-      <nav class="mx-auto flex max-w-6xl gap-5 px-4 py-3 text-sm font-semibold text-slate-700">
-        <a href="#about" class="whitespace-nowrap hover:text-rose-500">為什麼要來</a>
-        <a href="#highlights" class="whitespace-nowrap hover:text-rose-500">活動亮點</a>
-        <a href="#schedule" class="whitespace-nowrap hover:text-rose-500">活動流程</a>
-        <a href="#location" class="whitespace-nowrap hover:text-rose-500">時間地點</a>
+    <div class="overflow-x-auto no-scrollbar border-t border-amber-100 md:hidden">
+      <nav class="flex gap-6 px-5 py-2 text-sm font-bold text-stone-600">
+        <a href="#highlights" class="whitespace-nowrap hover:text-amber-700">活動亮點</a>
+        <a href="#why" class="whitespace-nowrap hover:text-amber-700">為什麼來</a>
+        <a href="#location" class="whitespace-nowrap hover:text-amber-700">活動資訊</a>
+        <a href="#location" class="whitespace-nowrap text-amber-700">免費參加</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
-    <section class="relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-b from-sky-100/90 via-amber-50/80 to-rose-50"></div>
-      <div class="absolute -left-10 top-10 h-36 w-36 rounded-full bg-pink-200/50 blur-3xl"></div>
-      <div class="absolute right-0 top-0 h-40 w-40 rounded-full bg-yellow-200/50 blur-3xl"></div>
 
-      <div class="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 md:grid-cols-2 md:px-6 md:py-20">
-        <div class="flex flex-col justify-center">
-          <div class="mb-4 flex flex-wrap gap-2">
-            <span class="rounded-full bg-rose-500 px-4 py-1 text-sm font-bold text-white shadow-sm">🎟 免費入場</span>
-            <span class="rounded-full bg-white px-4 py-1 text-sm font-bold text-sky-500 shadow-sm">不需報名</span>
-            <span class="rounded-full bg-white px-4 py-1 text-sm font-bold text-amber-500 shadow-sm">親子同遊</span>
+    <!-- ① 主視覺 Hero -->
+    <section class="hero-bg">
+      <div class="mx-auto max-w-5xl px-5 py-14 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+
+        <div class="flex flex-col">
+          <!-- 標籤列 -->
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="tag-gold">🎟 免費入場</span>
+            <span class="tag-gold">不需報名</span>
+            <span class="tag-gold">親子同遊</span>
           </div>
 
-          <h2 class="text-4xl font-black leading-tight text-slate-900 md:text-6xl">
-            溫馨五月天<br />善行在人間
+          <!-- 主標題 -->
+          <h2 class="serif text-5xl md:text-6xl font-black leading-tight text-stone-900">
+            溫馨五月天<br />
+            <span class="text-amber-700">善行在人間</span>
           </h2>
-          <p class="mt-3 text-xl font-bold text-rose-500">2026 雲嘉南感恩園遊會</p>
 
-          <div class="mt-6 grid gap-4 sm:grid-cols-3">
-            <div class="rounded-[1.5rem] bg-white/90 p-4 shadow-md ring-1 ring-white hover:-translate-y-1 transition">
-              <p class="text-sm font-semibold text-slate-500">日期</p>
-              <p class="mt-1 text-xl font-black text-rose-500">5/3（日）</p>
-            </div>
-            <div class="rounded-[1.5rem] bg-white/90 p-4 shadow-md ring-1 ring-white hover:-translate-y-1 transition">
-              <p class="text-sm font-semibold text-slate-500">時間</p>
-              <p class="mt-1 text-xl font-black text-sky-500">09:00–13:00</p>
-            </div>
-            <div class="rounded-[1.5rem] bg-white/90 p-4 shadow-md ring-1 ring-white hover:-translate-y-1 transition">
-              <p class="text-sm font-semibold text-slate-500">地點</p>
-              <p class="mt-1 text-xl font-black text-amber-500">嘉義市中央廣場</p>
-            </div>
+          <!-- 副標 -->
+          <p class="mt-5 text-lg text-stone-600 leading-8">
+            帶著家人，一起走進<br class="hidden md:block" />真實溫暖的早晨。
+          </p>
+
+          <!-- 時間地點 -->
+          <div class="mt-6 flex flex-col gap-2 text-base font-bold text-stone-700">
+            <p>🗓 2026 年 5 月 3 日（星期日）</p>
+            <p>⏰ 09:00 – 13:00</p>
+            <p>📍 嘉義市中央廣場</p>
           </div>
 
+          <!-- 按鈕 -->
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href="https://www.google.com/maps?q=23.481286,120.449533"
-               target="_blank" rel="noreferrer"
-               class="rounded-full bg-rose-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-rose-200 transition hover:-translate-y-1 hover:shadow-rose-300">
-              📍 點我導航到活動地點
-            </a>
-            <a href="#highlights"
-               class="rounded-full bg-white px-6 py-3 text-sm font-bold text-slate-700 ring-1 ring-rose-100 transition hover:-translate-y-1 hover:bg-slate-50">
-              看活動亮點
-            </a>
+            <a href="#location" class="btn-main">免費參加 →</a>
+            <a href="#highlights" class="btn-sub">看活動亮點</a>
           </div>
-          <p class="mt-4 text-sm text-slate-500">直接來就可以，不需要事先報名</p>
+          <p class="mt-3 text-xs text-stone-400">直接來就可以，不需要事先報名</p>
         </div>
 
-        <div class="relative flex items-center justify-center">
-          <div class="w-full max-w-2xl overflow-hidden rounded-[2rem] bg-white p-3 shadow-2xl shadow-amber-100 ring-1 ring-white/80 transition-transform duration-500 hover:scale-[1.02]">
-            <img
-              src="./poster.jpg"
-              alt="溫馨五月天・善行在人間 - 2026 雲嘉南感恩園遊會主視覺海報"
-              loading="lazy"
-              decoding="async"
-              class="h-full w-full rounded-[1.5rem] object-cover"
-            />
+        <!-- 海報 -->
+        <div class="flex justify-center">
+          <div class="rounded-3xl overflow-hidden shadow-2xl ring-4 ring-amber-100 max-w-sm w-full">
+            <img src="./poster.jpg"
+                 alt="溫馨五月天善行在人間活動海報"
+                 loading="lazy" decoding="async"
+                 class="w-full h-full object-cover" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="mx-auto max-w-6xl px-4 py-16 md:px-6">
-      <div class="rounded-[2rem] bg-white/80 p-8 shadow-lg ring-1 ring-white md:p-10">
-        <p class="text-sm font-black tracking-wide text-rose-500">為什麼要來</p>
-        <h3 class="mt-2 text-3xl font-black text-slate-900 md:text-4xl">這不只是一場園遊會</h3>
-        <div class="mt-6 space-y-4 text-lg leading-8 text-slate-600">
-          <p>而是一個讓家人一起走出門、放鬆相處的早晨。</p>
-          <p>孩子可以開心玩樂、參與互動，大人可以輕鬆逛逛、享受市集與表演。</p>
-          <p>在忙碌的生活中，給彼此一段簡單又溫暖的相處時光。</p>
-          <p class="font-bold text-slate-800 border-l-4 border-rose-400 pl-4">如果你正在找一個「適合全家一起出門」的地方，這裡會是很好的選擇。</p>
+    <!-- ② 活動亮點 -->
+    <section id="highlights" class="py-20 bg-[#fdf8f2]">
+      <div class="mx-auto max-w-5xl px-5">
+        <div class="text-center mb-12">
+          <p class="section-label tracking-widest mb-3">活動亮點</p>
+          <div class="divider mb-5"></div>
+          <h3 class="serif text-3xl md:text-4xl font-black text-stone-900">大人小孩都能找到樂趣</h3>
         </div>
+        <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3" id="highlights-grid"></div>
       </div>
     </section>
 
-    <!-- Highlights -->
-    <section id="highlights" class="py-16">
-      <div class="mx-auto max-w-6xl px-4 md:px-6">
-        <div class="text-center">
-          <p class="text-sm font-black tracking-wide text-rose-500">活動亮點</p>
-          <h3 class="mt-2 text-3xl font-black text-slate-900 md:text-4xl">大人小孩都能找到樂趣</h3>
+    <!-- ③ 好禮帶回家 -->
+    <section class="py-20 bg-gradient-to-br from-amber-50 to-rose-50">
+      <div class="mx-auto max-w-5xl px-5">
+        <div class="text-center mb-12">
+          <p class="section-label tracking-widest mb-3">好禮帶回家</p>
+          <div class="divider mb-5"></div>
+          <h3 class="serif text-3xl md:text-4xl font-black text-stone-900">限量送完為止</h3>
         </div>
-        <div class="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3" id="highlights-grid"></div>
-      </div>
-    </section>
-
-    <!-- Schedule -->
-    <section id="schedule" class="mx-auto max-w-6xl px-4 py-16 md:px-6">
-      <div class="rounded-[2rem] bg-gradient-to-r from-yellow-100 via-rose-100 to-sky-100 p-8 shadow-lg md:p-10">
-        <p class="text-sm font-black tracking-wide text-rose-500">活動流程</p>
-        <h3 class="mt-2 text-3xl font-black text-slate-900 md:text-4xl">當天安排一看就懂</h3>
-        <div class="mt-8 grid gap-4" id="schedule-grid"></div>
-      </div>
-    </section>
-
-    <!-- Location -->
-    <section id="location" class="py-16">
-      <div class="mx-auto grid max-w-6xl gap-8 px-4 md:grid-cols-2 md:px-6">
-        <div class="rounded-[2rem] bg-white/85 p-8 shadow-lg ring-1 ring-white md:p-10">
-          <p class="text-sm font-black tracking-wide text-rose-500">時間地點</p>
-          <h3 class="mt-2 text-3xl font-black text-slate-900 md:text-4xl">歡迎全家一起來走走</h3>
-          <div class="mt-8 space-y-5 text-lg leading-8 text-slate-600">
-            <p><span class="font-black text-slate-900">日期：</span>2026 年 5 月 3 日（星期日）</p>
-            <p><span class="font-black text-slate-900">時間：</span>上午 9 點至下午 1 點</p>
-            <p><span class="font-black text-slate-900">地點：</span>嘉義市中央廣場</p>
-            <p><span class="font-black text-slate-900">地址：</span>嘉義市民權路 371 號</p>
+        <div class="grid gap-5 sm:grid-cols-3">
+          <div class="card-warm rounded-2xl p-7 text-center">
+            <div class="text-4xl mb-4">🎁</div>
+            <h4 class="serif text-lg font-black text-stone-900 mb-2">到場即送摸彩券</h4>
+            <p class="text-stone-500 text-sm leading-6">每位到場來賓皆可領取，抽好禮就靠它！</p>
           </div>
-          <div class="mt-8">
-            <a href="https://www.google.com/maps?q=23.481286,120.449533"
-               target="_blank" rel="noreferrer"
-               class="rounded-full bg-rose-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-rose-200 transition hover:-translate-y-1 inline-block">
-              📍 點我導航到活動地點
-            </a>
+          <div class="card-warm rounded-2xl p-7 text-center">
+            <div class="text-4xl mb-4">🎯</div>
+            <h4 class="serif text-lg font-black text-stone-900 mb-2">完成闖關再送限定好禮</h4>
+            <p class="text-stone-500 text-sm leading-6">完成親子闖關任務，即可獲得限定好禮！</p>
+          </div>
+          <div class="card-warm rounded-2xl p-7 text-center">
+            <div class="text-4xl mb-4">🌸</div>
+            <h4 class="serif text-lg font-black text-stone-900 mb-2">現場限量準備</h4>
+            <p class="text-stone-500 text-sm leading-6">
+              手作麻糬 <span class="font-black text-amber-700">400 份</span><br />
+              康乃馨 <span class="font-black text-amber-700">400 份</span>
+            </p>
           </div>
         </div>
+        <p class="text-center mt-8 font-black text-amber-700 text-base">數量有限，建議提早到場！</p>
+      </div>
+    </section>
 
-        <div class="rounded-[2rem] bg-white/85 p-8 shadow-lg ring-1 ring-white md:p-10">
-          <h4 class="text-2xl font-black text-slate-900">小提醒</h4>
-          <ul class="mt-5 space-y-4 text-lg leading-8 text-slate-600">
-            <li class="flex items-start gap-2"><span>🎟</span><span><strong class="text-slate-800">免費入場，不需報名</strong>，直接來就可以。</span></li>
-            <li class="flex items-start gap-2"><span>⏰</span><span>建議提早到場，可先悠閒逛攤位與參加活動。</span></li>
-            <li class="flex items-start gap-2"><span>👨‍👩‍👧‍👦</span><span>活動適合親子、長輩與一般民眾一同參與。</span></li>
-            <li class="flex items-start gap-2"><span>🕐</span><span>現場內容豐富，建議預留完整上午時段。</span></li>
+    <!-- ④ 為什麼值得來 -->
+    <section id="why" class="py-20 bg-[#fdf8f2]">
+      <div class="mx-auto max-w-5xl px-5">
+        <div class="text-center mb-12">
+          <p class="section-label tracking-widest mb-3">為什麼值得來</p>
+          <div class="divider mb-5"></div>
+          <h3 class="serif text-3xl md:text-4xl font-black text-stone-900">這不只是一場園遊會</h3>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-5 text-lg text-stone-600 leading-8">
+            <p>而是一個讓家人一起走出門、放鬆相處的早晨。</p>
+            <p>孩子可以開心玩樂、參與互動，大人可以輕鬆逛逛、享受市集與表演。</p>
+            <p>在忙碌的生活中，給彼此一段簡單又溫暖的相處時光。</p>
+            <p class="font-bold text-stone-800 border-l-4 border-amber-400 pl-4">
+              不只是逛活動，也把一份善意帶回家。
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="card-warm rounded-2xl p-5 text-center">
+              <p class="text-3xl mb-2">👨‍👩‍👧‍👦</p>
+              <p class="font-black text-stone-800 text-sm">適合親子同遊</p>
+            </div>
+            <div class="card-warm rounded-2xl p-5 text-center">
+              <p class="text-3xl mb-2">🎟</p>
+              <p class="font-black text-stone-800 text-sm">完全免費入場</p>
+            </div>
+            <div class="card-warm rounded-2xl p-5 text-center">
+              <p class="text-3xl mb-2">🎭</p>
+              <p class="font-black text-stone-800 text-sm">舞台互動表演</p>
+            </div>
+            <div class="card-warm rounded-2xl p-5 text-center">
+              <p class="text-3xl mb-2">🎁</p>
+              <p class="font-black text-stone-800 text-sm">豐富好禮帶回家</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑤ 活動資訊 + 地圖 -->
+    <section id="location" class="py-20 bg-gradient-to-br from-amber-50 to-orange-50">
+      <div class="mx-auto max-w-5xl px-5">
+        <div class="text-center mb-12">
+          <p class="section-label tracking-widest mb-3">活動資訊</p>
+          <div class="divider mb-5"></div>
+          <h3 class="serif text-3xl md:text-4xl font-black text-stone-900">歡迎全家一起來走走</h3>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- 資訊卡 -->
+          <div class="card-warm rounded-2xl p-8">
+            <div class="space-y-5 text-base text-stone-600 leading-8">
+              <p><span class="font-black text-stone-900">日期</span>｜2026 年 5 月 3 日（星期日）</p>
+              <p><span class="font-black text-stone-900">時間</span>｜上午 9 點至下午 1 點</p>
+              <p><span class="font-black text-stone-900">地點</span>｜嘉義市中央廣場</p>
+              <p><span class="font-black text-stone-900">地址</span>｜嘉義市民權路 371 號</p>
+              <p><span class="font-black text-stone-900">入場</span>｜<span class="text-amber-700 font-black">免費・不需報名・直接來</span></p>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="https://www.google.com/maps?q=23.481286,120.449533"
+                 target="_blank" rel="noreferrer" class="btn-main">
+                📍 點我導航到活動地點
+              </a>
+            </div>
+          </div>
+
+          <!-- 地圖 embed -->
+          <div class="rounded-2xl overflow-hidden shadow-lg ring-1 ring-amber-100" style="min-height:280px;">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d460.5!2d120.449533!3d23.481286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e7763b3fcc6b1%3A0x7c1e7b8d5a9f1234!2z5ZyL5aSu5bqX5Zyf5Lqk5puy!5e0!3m2!1szh-TW!2stw!4v1"
+              width="100%" height="100%" style="border:0; min-height:280px;"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- 小提醒 -->
+        <div class="mt-8 card-warm rounded-2xl p-7">
+          <h4 class="serif text-xl font-black text-stone-900 mb-4">小提醒</h4>
+          <ul class="grid sm:grid-cols-2 gap-3 text-stone-600 text-base leading-7">
+            <li class="flex gap-2"><span>🎟</span><span><strong class="text-stone-800">免費入場，不需報名</strong>，直接來就可以。</span></li>
+            <li class="flex gap-2"><span>⏰</span><span>建議提早到場，可先悠閒逛攤位與參加活動。</span></li>
+            <li class="flex gap-2"><span>👨‍👩‍👧‍👦</span><span>活動適合親子、長輩與一般民眾一同參與。</span></li>
+            <li class="flex gap-2"><span>🕐</span><span>現場內容豐富，建議預留完整上午時段。</span></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="mx-auto max-w-6xl px-4 pb-12 md:px-6">
-      <div class="rounded-[2rem] bg-gradient-to-r from-rose-500 to-amber-400 p-8 text-center text-white shadow-xl md:p-12">
-        <h3 class="text-3xl font-black md:text-4xl">這個週日，帶著家人一起出門走走</h3>
-        <p class="mt-4 text-lg leading-8 text-rose-50">來一場簡單、溫暖，又有意義的相聚時光。</p>
-        <a href="https://www.google.com/maps?q=23.481286,120.449533"
-           target="_blank" rel="noreferrer"
-           class="mt-8 inline-block rounded-full bg-white px-8 py-4 text-base font-black text-rose-500 shadow-lg transition hover:-translate-y-1 hover:shadow-2xl">
-          📍 點我導航到活動地點
-        </a>
-        <p class="mt-4 text-sm font-medium text-rose-100">免費入場・不需報名・歡迎直接參加</p>
+    <!-- ⑥ 最後 CTA -->
+    <section class="py-20 bg-[#fdf8f2]">
+      <div class="mx-auto max-w-2xl px-5 text-center">
+        <h3 class="serif text-3xl md:text-4xl font-black text-stone-900 leading-snug">
+          這個週日，<br />帶著家人一起出門走走
+        </h3>
+        <p class="mt-5 text-lg text-stone-500 leading-8">
+          來一場簡單、溫暖，又有意義的相聚時光。<br />
+          歡迎全家一起來！
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="https://www.google.com/maps?q=23.481286,120.449533"
+             target="_blank" rel="noreferrer" class="btn-main">
+            📍 點我導航到活動地點
+          </a>
+          <a href="#highlights" class="btn-sub">看活動亮點</a>
+        </div>
+        <p class="mt-4 text-xs text-stone-400">免費入場・不需報名・歡迎直接參加</p>
       </div>
     </section>
 
-    <!-- Organizer -->
-    <section class="mx-auto max-w-6xl px-4 pb-12 md:px-6">
-      <div class="rounded-[2rem] bg-white/85 p-8 shadow-lg ring-1 ring-white md:p-10">
-        <p class="text-sm font-black tracking-wide text-rose-500">主辦資訊</p>
-        <h3 class="mt-2 text-3xl font-black text-slate-900 md:text-4xl">共同邀請您來參加</h3>
-        <div class="mt-6 grid gap-8 md:grid-cols-2">
+    <!-- 主辦資訊 -->
+    <section class="py-12 bg-amber-50 border-t border-amber-100">
+      <div class="mx-auto max-w-5xl px-5">
+        <div class="grid md:grid-cols-2 gap-8 text-sm text-stone-600">
           <div>
-            <p class="text-lg font-black text-slate-800">主辦單位</p>
-            <p class="mt-2 leading-7 text-slate-600">台灣自媒體應用科技學會</p>
-            <p class="mt-4 text-lg font-black text-slate-800">合辦單位</p>
-            <p class="mt-2 leading-7 text-slate-600">台灣法輪大法學會</p>
+            <p class="font-black text-stone-800 mb-2">主辦單位</p>
+            <p>台灣自媒體應用科技學會</p>
+            <p class="font-black text-stone-800 mt-4 mb-2">合辦單位</p>
+            <p>台灣法輪大法學會</p>
           </div>
           <div>
-            <p class="text-lg font-black text-slate-800">聯絡方式</p>
-            <p class="mt-2 leading-7 text-slate-600">聯繫電話：<a href="tel:0912745635" class="hover:text-rose-500 transition">0912-745635</a></p>
-            <p class="leading-7 text-slate-600">聯絡人：徐小姐</p>
+            <p class="font-black text-stone-800 mb-2">聯絡方式</p>
+            <p>聯繫電話：<a href="tel:0912745635" class="hover:text-amber-700 transition">0912-745635</a></p>
+            <p>聯絡人：徐小姐</p>
           </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-white/70 bg-white/80 backdrop-blur">
-    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8 text-sm text-slate-500 md:flex-row md:items-center md:justify-between md:px-6">
-      <p class="font-medium text-slate-600">2026 雲嘉南「溫馨五月天・善行在人間」園遊會</p>
-      <div class="flex flex-wrap gap-6">
-        <a href="#about" class="hover:text-rose-500 transition">為什麼要來</a>
-        <a href="#highlights" class="hover:text-rose-500 transition">活動亮點</a>
-        <a href="#schedule" class="hover:text-rose-500 transition">活動流程</a>
-        <a href="#location" class="hover:text-rose-500 transition">時間地點</a>
+  <footer class="bg-stone-800 text-stone-400 py-8">
+    <div class="mx-auto max-w-5xl px-5 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+      <p>© 2026 雲嘉南「溫馨五月天・善行在人間」園遊會</p>
+      <div class="flex gap-6">
+        <a href="#highlights" class="hover:text-amber-300 transition">活動亮點</a>
+        <a href="#why" class="hover:text-amber-300 transition">為什麼來</a>
+        <a href="#location" class="hover:text-amber-300 transition">活動資訊</a>
       </div>
     </div>
   </footer>
@@ -233,33 +377,18 @@
   <script>
     const highlights = [
       { icon: "🎮", title: "智慧闖關體驗", desc: "闖關認識優質媒體與乾淨網路平台，幫助家庭遠離網路霸凌與詐騙。" },
-      { icon: "🎭", title: "舞台表演", desc: "舞台表演傳遞溫暖、正向與美德，適合全家一起欣賞。" },
+      { icon: "🎭", title: "舞台節目表演", desc: "舞台表演傳遞溫暖、正向與美德，適合全家一起欣賞。" },
       { icon: "🍱", title: "職人美食", desc: "精選職人美食攤位，逛得開心也吃得滿足。" },
-      { icon: "🎨", title: "手作市集", desc: "寫真素描、植染、陶土創意手作等豐富攤位，體驗各種有趣手藝。" },
-      { icon: "🎁", title: "現場摸彩活動", desc: "來場可領摸彩券，完成闖關還有贈禮，讓活動更有期待感。" },
-      { icon: "🎈", title: "親子遊戲區", desc: "降落傘、電動汽車、釣魚、桌遊等互動內容，讓孩子玩得開心，大人也放心。" },
-    ];
-
-    const schedule = [
-      { time: "09:00–09:10", item: "暖場節目" },
-      { time: "09:10–09:40", item: "開幕致詞／鑼聲開場" },
-      { time: "09:40–13:00", item: "精彩活動／摸彩" },
+      { icon: "🎨", title: "手作與特色攤位", desc: "寫真素描、植染、陶土創意手作等，體驗各種有趣手藝。" },
+      { icon: "🎁", title: "幸運摸彩", desc: "來場可領摸彩券，完成闖關還有贈禮，讓活動更有期待感。" },
+      { icon: "🎈", title: "親子遊戲互動", desc: "降落傘、電動汽車、釣魚、桌遊等，讓孩子玩得開心，大人也放心。" },
     ];
 
     document.getElementById("highlights-grid").innerHTML = highlights.map(h => `
-      <div class="rounded-[2rem] bg-white/85 p-6 shadow-md ring-1 ring-white/80 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-white cursor-default">
-        <div class="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-pink-100 to-amber-100 text-3xl shadow-sm">
-          ${h.icon}
-        </div>
-        <h4 class="text-xl font-black text-slate-900">${h.title}</h4>
-        <p class="mt-3 leading-7 text-slate-600">${h.desc}</p>
-      </div>
-    `).join("");
-
-    document.getElementById("schedule-grid").innerHTML = schedule.map(s => `
-      <div class="flex flex-col gap-2 rounded-[1.5rem] bg-white/90 p-5 shadow-sm transition hover:shadow-md hover:scale-[1.01] md:flex-row md:items-center md:justify-between">
-        <div class="text-2xl font-black text-rose-500">${s.time}</div>
-        <div class="text-lg font-bold text-slate-800">${s.item}</div>
+      <div class="card-warm rounded-2xl p-7">
+        <div class="text-4xl mb-4">${h.icon}</div>
+        <h4 class="serif text-lg font-black text-stone-900 mb-2">${h.title}</h4>
+        <p class="text-stone-500 text-sm leading-6">${h.desc}</p>
       </div>
     `).join("");
   </script>
