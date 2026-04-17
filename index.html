@@ -5,405 +5,453 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="2026 雲嘉南感恩系列活動「溫馨五月天・善行在人間」。5/3(日) 於嘉義市中央廣場舉辦，免費入場不需報名，歡迎全家大小一起來同樂！" />
   <meta property="og:title" content="溫馨五月天・善行在人間 — 2026 雲嘉南感恩系列活動" />
-  <meta property="og:description" content="帶著家人，一起走進真實溫暖的早晨。免費入場・不需報名・歡迎直接參加。" />
+  <meta property="og:description" content="免費入場・不需報名・親子闖關・摸彩驚喜，歡迎全家一起來！" />
   <meta property="og:image" content="https://socialimpactlab0.github.io/warming-may-fair/poster.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://socialimpactlab0.github.io/warming-may-fair/" />
   <title>溫馨五月天・善行在人間 — 2026 雲嘉南感恩系列活動</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap');
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 72px;
+      scroll-padding-top: 76px;
     }
+
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
     body {
-      background-color: #fdf8f2;
+      background:
+        radial-gradient(circle at top left, rgba(255,241,214,0.95), transparent 30%),
+        radial-gradient(circle at top right, rgba(255,230,214,0.85), transparent 24%),
+        linear-gradient(180deg, #fffaf5 0%, #fff7ef 38%, #fffdf9 100%);
+      font-family: 'Noto Sans TC', sans-serif;
+      color: #44403c;
+    }
+
+    .serif {
       font-family: 'Noto Serif TC', serif;
     }
 
-    .serif { font-family: 'Noto Serif TC', serif; }
-
-    /* 暖金漸層背景 */
     .hero-bg {
-      background: linear-gradient(160deg, #fff8ee 0%, #fdefd8 40%, #fde8d8 100%);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(255,237,213,0.9), transparent 22%),
+        radial-gradient(circle at 82% 12%, rgba(224,242,254,0.75), transparent 20%),
+        radial-gradient(circle at 85% 82%, rgba(255,228,230,0.7), transparent 24%),
+        linear-gradient(160deg, #fffaf2 0%, #fff3df 46%, #fff8f1 100%);
+      position: relative;
+      overflow: hidden;
     }
 
-    /* 分隔裝飾線 */
+    .hero-bg::before,
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      border-radius: 9999px;
+      background: rgba(255,255,255,0.45);
+      filter: blur(2px);
+      pointer-events: none;
+    }
+
+    .hero-bg::before {
+      width: 180px;
+      height: 180px;
+      top: -40px;
+      right: -30px;
+    }
+
+    .hero-bg::after {
+      width: 120px;
+      height: 120px;
+      bottom: 20px;
+      left: -20px;
+    }
+
     .divider {
-      width: 48px; height: 3px;
-      background: linear-gradient(90deg, #d4924a, #e8b07a);
-      border-radius: 2px;
+      width: 54px;
+      height: 4px;
+      background: linear-gradient(90deg, #f59e0b, #fb7185);
+      border-radius: 9999px;
       margin: 0 auto;
     }
 
-    /* 暖色卡片 hover */
-    .card-warm {
-      background: #fffaf4;
-      border: 1px solid #f0dfc0;
-      transition: transform 0.25s, box-shadow 0.25s;
+    .card-soft {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(253, 230, 138, 0.38);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
-    .card-warm:hover {
+
+    .card-soft:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(180,120,60,0.12);
+      box-shadow: 0 16px 36px rgba(245, 158, 11, 0.12);
     }
 
-    /* 主要按鈕 */
-    .btn-main {
-      background: linear-gradient(135deg, #c8752a, #e09848);
-      color: #fff;
-      font-weight: 700;
+    .card-highlight {
+      background: linear-gradient(180deg, #fffaf2 0%, #fff5e6 100%);
+      border: 1px solid #fde7b0;
+      box-shadow: 0 8px 28px rgba(251, 191, 36, 0.10);
+    }
+
+    .tag-pill {
+      background: #fff7df;
+      color: #b45309;
+      border: 1px solid #fde68a;
       border-radius: 9999px;
-      padding: 14px 32px;
-      font-size: 1rem;
-      letter-spacing: 0.05em;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 16px rgba(180,100,30,0.25);
-      display: inline-block;
-    }
-    .btn-main:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(180,100,30,0.35);
-    }
-
-    /* 次要按鈕 */
-    .btn-sub {
-      background: transparent;
-      color: #b86a1e;
+      padding: 6px 14px;
+      font-size: 0.82rem;
       font-weight: 700;
-      border-radius: 9999px;
-      padding: 13px 28px;
-      font-size: 0.95rem;
-      border: 2px solid #d4924a;
-      transition: all 0.2s;
-      display: inline-block;
-    }
-    .btn-sub:hover {
-      background: #fdf0e0;
-      transform: translateY(-2px);
+      letter-spacing: 0.02em;
     }
 
-    /* 金色標籤 */
-    .tag-gold {
-      background: #fdf0dc;
-      color: #a0621a;
-      border: 1px solid #e8c080;
-      border-radius: 9999px;
-      padding: 4px 16px;
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-
-    /* section 標題裝飾 */
     .section-label {
-      color: #c8752a;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
+      color: #f59e0b;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+    }
+
+    .btn-main {
+      display: inline-block;
+      background: linear-gradient(135deg, #f59e0b, #f97316);
+      color: #fff;
+      font-weight: 800;
+      border-radius: 9999px;
+      padding: 14px 30px;
+      box-shadow: 0 10px 24px rgba(249, 115, 22, 0.24);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-main:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 14px 28px rgba(249, 115, 22, 0.30);
+    }
+
+    .btn-sub {
+      display: inline-block;
+      color: #b45309;
+      background: rgba(255,255,255,0.75);
+      border: 2px solid #fed7aa;
+      border-radius: 9999px;
+      padding: 13px 26px;
+      font-weight: 800;
+      transition: all 0.2s ease;
+    }
+
+    .btn-sub:hover {
+      background: #fff7ed;
+      transform: translateY(-2px);
+    }
+
+    .list-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #f59e0b, #fb7185);
+      margin-top: 0.55rem;
+      flex: 0 0 auto;
+    }
+
+    .soft-panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(255,250,245,0.9) 100%);
+      border: 1px solid rgba(253, 230, 138, 0.42);
+      box-shadow: 0 12px 34px rgba(245, 158, 11, 0.07);
     }
   </style>
 </head>
-<body class="text-stone-800">
+<body>
 
-  <!-- Header -->
-  <header class="sticky top-0 z-30 bg-[#fdf8f2]/90 backdrop-blur-md border-b border-amber-100">
+  <header class="sticky top-0 z-30 border-b border-orange-100 bg-white/80 backdrop-blur-md">
     <div class="mx-auto flex max-w-5xl items-center justify-between px-5 py-3">
       <a href="#" class="block">
-        <p class="text-xs font-bold text-amber-700 tracking-widest">2026 雲嘉南 感恩系列活動</p>
-        <p class="text-sm font-black text-stone-800 serif">溫馨五月天・善行在人間</p>
+        <p class="text-xs font-extrabold tracking-[0.18em] text-orange-400">2026 雲嘉南 感恩系列活動</p>
+        <p class="serif text-sm font-black text-stone-800">溫馨五月天・善行在人間</p>
       </a>
-      <nav class="hidden gap-7 text-sm font-bold md:flex text-stone-600">
-        <a href="#highlights" class="hover:text-amber-700 transition-colors">活動亮點</a>
-        <a href="#why" class="hover:text-amber-700 transition-colors">為什麼來</a>
-        <a href="#location" class="hover:text-amber-700 transition-colors">活動資訊</a>
+      <nav class="hidden gap-7 text-sm font-bold text-stone-600 md:flex">
+        <a href="#reasons" class="transition hover:text-orange-500">為什麼來</a>
+        <a href="#highlights" class="transition hover:text-orange-500">活動亮點</a>
+        <a href="#gifts" class="transition hover:text-orange-500">好禮帶回家</a>
+        <a href="#location" class="transition hover:text-orange-500">活動資訊</a>
       </nav>
-      <a href="#location" class="btn-main hidden md:inline-block" style="padding:10px 22px;font-size:0.85rem;">
-        免費參加
-      </a>
+      <a href="#location" class="btn-main hidden px-5 py-2.5 text-sm md:inline-block">免費參加</a>
     </div>
-    <div class="overflow-x-auto no-scrollbar border-t border-amber-100 md:hidden">
+    <div class="overflow-x-auto no-scrollbar border-t border-orange-100 md:hidden">
       <nav class="flex gap-6 px-5 py-2 text-sm font-bold text-stone-600">
-        <a href="#highlights" class="whitespace-nowrap hover:text-amber-700">活動亮點</a>
-        <a href="#why" class="whitespace-nowrap hover:text-amber-700">為什麼來</a>
-        <a href="#location" class="whitespace-nowrap hover:text-amber-700">活動資訊</a>
-        <a href="#location" class="whitespace-nowrap text-amber-700">免費參加</a>
+        <a href="#reasons" class="whitespace-nowrap hover:text-orange-500">為什麼來</a>
+        <a href="#highlights" class="whitespace-nowrap hover:text-orange-500">活動亮點</a>
+        <a href="#gifts" class="whitespace-nowrap hover:text-orange-500">好禮帶回家</a>
+        <a href="#location" class="whitespace-nowrap text-orange-500">活動資訊</a>
       </nav>
     </div>
   </header>
 
   <main>
-
-    <!-- ① 主視覺 Hero -->
     <section class="hero-bg">
-      <div class="mx-auto max-w-5xl px-5 py-14 md:py-24 grid md:grid-cols-2 gap-12 items-center">
-
-        <div class="flex flex-col">
-          <!-- 標籤列 -->
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="tag-gold">🎟 免費入場</span>
-            <span class="tag-gold">不需報名</span>
-            <span class="tag-gold">親子同遊</span>
+      <div class="mx-auto grid max-w-5xl items-center gap-12 px-5 py-14 md:grid-cols-2 md:py-24">
+        <div>
+          <div class="mb-6 flex flex-wrap gap-2">
+            <span class="tag-pill">🎟 免費入場</span>
+            <span class="tag-pill">不需報名</span>
+            <span class="tag-pill">親子同遊</span>
           </div>
 
-          <!-- 主標題 -->
-          <h2 class="serif text-3xl sm:text-4xl md:text-6xl font-black leading-tight text-stone-900">
+          <h1 class="serif text-5xl font-black leading-tight text-stone-900 md:text-6xl">
             溫馨五月天<br />
-            <span class="text-amber-700">善行在人間</span>
-          </h2>
+            <span class="text-orange-500">善行在人間</span>
+          </h1>
 
-          <!-- 主打誘因 -->
-          <div class="mt-6 rounded-2xl bg-white/70 border border-amber-100 p-4 md:p-5 shadow-sm">
-            <div class="space-y-2 text-base md:text-[1.02rem] font-bold text-amber-700">
-              <p>🎁 到場即送摸彩券</p>
-              <p>🎯 完成親子闖關再送好禮</p>
-              <p>🎉 現場不定時抽出幸運得主（需在場）</p>
-            </div>
-            <p class="mt-3 text-sm md:text-[0.95rem] text-stone-600 font-bold leading-6">
-              🌸 手作麻糬 400 份・康乃馨 400 份<br />
-              熱門時段可能提早送完，建議提早到場！
-            </p>
-          </div>
-
-          <!-- 副標 -->
-          <p class="mt-5 text-lg text-stone-600 leading-8">
-            帶著家人一起出門走走，<br class="hidden md:block" />享受一個有互動、有好禮、也有溫度的週日早晨。
+          <p class="mt-5 text-lg leading-8 text-stone-600">
+            這個週日，帶著家人一起出門走走。<br class="hidden md:block" />
+            有互動、有好禮，也有一段簡單溫暖的相聚時光。
           </p>
 
-          <!-- 時間地點 -->
+          <div class="mt-7 rounded-3xl border border-orange-100 bg-white/72 p-5 shadow-[0_10px_30px_rgba(251,146,60,0.12)] backdrop-blur-sm">
+            <div class="space-y-3 text-[1rem] font-bold text-stone-700">
+              <p class="flex items-start gap-3"><span>🎁</span><span>到場即送摸彩券</span></p>
+              <p class="flex items-start gap-3"><span>🎯</span><span>完成親子闖關再送好禮</span></p>
+              <p class="flex items-start gap-3"><span>🎉</span><span>現場不定時抽出幸運得主（需在場）</span></p>
+              <p class="flex items-start gap-3"><span>🌸</span><span>手作麻糬 400 份・康乃馨 400 份</span></p>
+            </div>
+            <p class="mt-4 text-sm font-extrabold text-orange-500">熱門時段可能提早送完，建議提早到場！</p>
+          </div>
+
           <div class="mt-6 flex flex-col gap-2 text-base font-bold text-stone-700">
             <p>🗓 2026 年 5 月 3 日（星期日）</p>
             <p>⏰ 09:00 – 13:00</p>
             <p>📍 嘉義市中央廣場</p>
           </div>
 
-          <!-- 按鈕 -->
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href="#location" class="btn-main">免費參加 →</a>
-            <a href="#highlights" class="btn-sub">看活動亮點</a>
+            <a href="#location" class="btn-main">立即看活動資訊</a>
+            <a href="#highlights" class="btn-sub">先看活動亮點</a>
           </div>
-          <p class="mt-3 text-sm text-stone-500 font-bold">免費入場・不需報名・建議提早到場</p>
+          <p class="mt-4 text-sm font-bold text-stone-500">免費入場・不需報名・直接來就可以</p>
         </div>
 
-        <!-- 海報 -->
         <div class="flex justify-center">
-          <div class="rounded-3xl overflow-hidden shadow-2xl ring-4 ring-amber-100 max-w-sm w-full">
-            <img src="./poster.jpg"
-                 alt="溫馨五月天善行在人間活動海報"
-                 loading="lazy" decoding="async"
-                 class="w-full h-full object-cover" />
+          <div class="relative w-full max-w-sm overflow-hidden rounded-[2rem] border-4 border-white/80 shadow-[0_18px_50px_rgba(251,146,60,0.18)] ring-1 ring-orange-100">
+            <img src="./poster.jpg" alt="溫馨五月天善行在人間活動海報" loading="lazy" decoding="async" class="h-full w-full object-cover" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ② 活動亮點 -->
-    <section id="highlights" class="py-20 bg-[#fdf8f2]">
+    <section id="reasons" class="py-20">
       <div class="mx-auto max-w-5xl px-5">
-        <div class="text-center mb-12">
-          <p class="section-label tracking-widest mb-3">活動亮點</p>
+        <div class="mb-12 text-center">
+          <p class="section-label mb-3">為什麼值得來</p>
           <div class="divider mb-5"></div>
-          <h3 class="serif text-3xl md:text-4xl font-black text-stone-900">大人小孩都能找到樂趣</h3>
+          <h2 class="serif text-3xl font-black text-stone-900 md:text-4xl">不只是逛活動，而是一個適合全家的週末提案</h2>
+        </div>
+
+        <div class="grid items-center gap-8 md:grid-cols-2">
+          <div class="soft-panel rounded-[2rem] p-8">
+            <div class="space-y-5 text-lg leading-8 text-stone-600">
+              <p>孩子可以開心玩闖關、參與互動，大人也能輕鬆逛市集、看表演、享受悠閒的週末早晨。</p>
+              <p>不用花錢、不用報名，來了就能參加，還有好禮與摸彩驚喜帶回家。</p>
+              <p class="border-l-4 border-orange-300 pl-4 font-bold text-stone-800">如果你正在找一個適合全家一起出門、又不會太有壓力的地方，這裡會是很好的選擇。</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="card-soft rounded-3xl p-5 text-center">
+              <p class="mb-2 text-3xl">👨‍👩‍👧‍👦</p>
+              <p class="text-sm font-black text-stone-800">適合親子同遊</p>
+            </div>
+            <div class="card-soft rounded-3xl p-5 text-center">
+              <p class="mb-2 text-3xl">🎟</p>
+              <p class="text-sm font-black text-stone-800">免費直接參加</p>
+            </div>
+            <div class="card-soft rounded-3xl p-5 text-center">
+              <p class="mb-2 text-3xl">🎭</p>
+              <p class="text-sm font-black text-stone-800">有表演也有互動</p>
+            </div>
+            <div class="card-soft rounded-3xl p-5 text-center">
+              <p class="mb-2 text-3xl">🎁</p>
+              <p class="text-sm font-black text-stone-800">有驚喜好禮可拿</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="highlights" class="bg-white/70 py-20">
+      <div class="mx-auto max-w-5xl px-5">
+        <div class="mb-12 text-center">
+          <p class="section-label mb-3">活動亮點</p>
+          <div class="divider mb-5"></div>
+          <h2 class="serif text-3xl font-black text-stone-900 md:text-4xl">像走進一個溫暖又熱鬧的小小園遊會</h2>
         </div>
         <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3" id="highlights-grid"></div>
       </div>
     </section>
 
-    <!-- ③ 好禮帶回家 -->
-    <section class="py-20 bg-gradient-to-br from-amber-50 to-rose-50">
+    <section id="gifts" class="py-20">
       <div class="mx-auto max-w-5xl px-5">
-        <div class="text-center mb-12">
-          <p class="section-label tracking-widest mb-3">好禮帶回家</p>
+        <div class="mb-12 text-center">
+          <p class="section-label mb-3">好禮帶回家</p>
           <div class="divider mb-5"></div>
-          <h3 class="serif text-3xl md:text-4xl font-black text-stone-900">來玩、來拿、別錯過現場驚喜</h3>
+          <h2 class="serif text-3xl font-black text-stone-900 md:text-4xl">不只是來逛逛，還有驚喜可以帶回家</h2>
         </div>
-        <div class="grid gap-5 sm:grid-cols-3">
-          <div class="card-warm rounded-2xl p-7 text-center">
-            <div class="text-4xl mb-4">🎁</div>
-            <h4 class="serif text-lg font-black text-stone-900 mb-2">到場即送摸彩券</h4>
-            <p class="text-stone-500 text-sm leading-6">每位到場來賓皆可領取，抽好禮就靠它！</p>
-          </div>
-          <div class="card-warm rounded-2xl p-7 text-center">
-            <div class="text-4xl mb-4">🎯</div>
-            <h4 class="serif text-lg font-black text-stone-900 mb-2">完成闖關再送限定好禮</h4>
-            <p class="text-stone-500 text-sm leading-6">完成親子闖關任務，即可獲得限定好禮！</p>
-          </div>
-          <div class="card-warm rounded-2xl p-7 text-center">
-            <div class="text-4xl mb-4">🌸</div>
-            <h4 class="serif text-lg font-black text-stone-900 mb-2">現場限量準備</h4>
-            <p class="text-stone-500 text-sm leading-6">
-              手作麻糬 <span class="font-black text-amber-700">400 份</span><br />
-              康乃馨 <span class="font-black text-amber-700">400 份</span>
-            </p>
-          </div>
-        </div>
-        <p class="text-center mt-8 font-black text-amber-700 text-base">數量有限，建議提早到場！</p>
-      </div>
-    </section>
 
-    <!-- ④ 為什麼值得來 -->
-    <section id="why" class="py-20 bg-[#fdf8f2]">
-      <div class="mx-auto max-w-5xl px-5">
-        <div class="text-center mb-12">
-          <p class="section-label tracking-widest mb-3">為什麼值得來</p>
-          <div class="divider mb-5"></div>
-          <h3 class="serif text-3xl md:text-4xl font-black text-stone-900">這不只是一場園遊會</h3>
+        <div class="grid gap-5 md:grid-cols-3">
+          <div class="card-highlight rounded-[2rem] p-7 text-center">
+            <div class="mb-4 text-4xl">🎁</div>
+            <h3 class="serif mb-2 text-xl font-black text-stone-900">到場即送摸彩券</h3>
+            <p class="text-sm leading-7 text-stone-600">到場就能領取摸彩券，活動期間還有不定時驚喜抽出幸運得主。</p>
+          </div>
+          <div class="card-highlight rounded-[2rem] p-7 text-center">
+            <div class="mb-4 text-4xl">🎯</div>
+            <h3 class="serif mb-2 text-xl font-black text-stone-900">親子闖關再送好禮</h3>
+            <p class="text-sm leading-7 text-stone-600">完成親子闖關任務，再把限定小禮物帶回家，孩子更有參與感。</p>
+          </div>
+          <div class="card-highlight rounded-[2rem] p-7 text-center">
+            <div class="mb-4 text-4xl">🌸</div>
+            <h3 class="serif mb-2 text-xl font-black text-stone-900">現場限量準備</h3>
+            <p class="text-sm leading-7 text-stone-600">手作麻糬 <span class="font-black text-orange-500">400 份</span><br />康乃馨 <span class="font-black text-orange-500">400 份</span></p>
+          </div>
         </div>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div class="space-y-5 text-lg text-stone-600 leading-8">
-            <p>而是一個讓家人一起走出門、輕鬆相處，又能留下開心回憶的週日早晨。</p>
-            <p>孩子可以開心玩闖關、參與互動體驗；大人可以放鬆走走、享受市集與表演。</p>
-            <p>免費入場、不需報名，沒有壓力，適合全家大小一起來。</p>
-            <p class="font-bold text-stone-800 border-l-4 border-amber-400 pl-4">
-              有得玩、有得拿，也有機會把現場驚喜一起帶回家。
-            </p>
-          </div>
-          <div class="grid grid-cols-2 gap-4">
-            <div class="card-warm rounded-2xl p-5 text-center">
-              <p class="text-3xl mb-2">👨‍👩‍👧‍👦</p>
-              <p class="font-black text-stone-800 text-sm">適合親子同遊</p>
-            </div>
-            <div class="card-warm rounded-2xl p-5 text-center">
-              <p class="text-3xl mb-2">🎟</p>
-              <p class="font-black text-stone-800 text-sm">完全免費入場</p>
-            </div>
-            <div class="card-warm rounded-2xl p-5 text-center">
-              <p class="text-3xl mb-2">🎭</p>
-              <p class="font-black text-stone-800 text-sm">舞台表演互動</p>
-            </div>
-            <div class="card-warm rounded-2xl p-5 text-center">
-              <p class="text-3xl mb-2">🎁</p>
-              <p class="font-black text-stone-800 text-sm">現場驚喜別錯過</p>
-            </div>
-          </div>
+
+        <div class="mx-auto mt-8 max-w-3xl rounded-3xl border border-orange-100 bg-orange-50/70 px-6 py-5 text-center shadow-[0_10px_28px_rgba(251,146,60,0.08)]">
+          <p class="text-base font-extrabold text-orange-500">🎉 現場不定時抽出幸運得主（需在場）</p>
+          <p class="mt-2 text-sm font-bold text-stone-600">數量有限，熱門時段可能提早送完，建議提早到場！</p>
         </div>
       </div>
     </section>
 
-    <!-- ⑤ 活動資訊 + 地圖 -->
-    <section id="location" class="py-20 bg-gradient-to-br from-amber-50 to-orange-50">
+    <section id="location" class="bg-white/75 py-20">
       <div class="mx-auto max-w-5xl px-5">
-        <div class="text-center mb-12">
-          <p class="section-label tracking-widest mb-3">活動資訊</p>
+        <div class="mb-12 text-center">
+          <p class="section-label mb-3">活動資訊</p>
           <div class="divider mb-5"></div>
-          <h3 class="serif text-3xl md:text-4xl font-black text-stone-900">歡迎全家一起來走走</h3>
+          <h2 class="serif text-3xl font-black text-stone-900 md:text-4xl">這個週日，歡迎全家一起來走走</h2>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-          <!-- 資訊卡 -->
-          <div class="card-warm rounded-2xl p-8">
+        <div class="grid gap-8 md:grid-cols-2">
+          <div class="soft-panel rounded-[2rem] p-8">
             <div class="space-y-4 text-base text-stone-600">
               <div class="flex gap-2"><span class="font-black text-stone-900 shrink-0">日期</span><span>｜2026 年 5 月 3 日（星期日）</span></div>
               <div class="flex gap-2"><span class="font-black text-stone-900 shrink-0">時間</span><span>｜上午 9 點至下午 1 點</span></div>
               <div class="flex gap-2"><span class="font-black text-stone-900 shrink-0">地點</span><span>｜嘉義市中央廣場</span></div>
               <div class="flex gap-2"><span class="font-black text-stone-900 shrink-0">地址</span><span>｜嘉義市民權路 371 號</span></div>
-              <div class="flex gap-2"><span class="font-black text-stone-900 shrink-0">入場</span><span>｜<span class="text-amber-700 font-black">免費・不需報名・直接來</span></span></div>
+              <div class="flex gap-2"><span class="font-black text-stone-900 shrink-0">入場</span><span>｜<span class="font-black text-orange-500">免費・不需報名・直接來</span></span></div>
             </div>
             <div class="mt-8 flex flex-wrap gap-3">
-              <a href="https://www.google.com/maps?q=23.481286,120.449533"
-                 target="_blank" rel="noreferrer" class="btn-main">
-                📍 點我導航到活動地點
-              </a>
+              <a href="https://www.google.com/maps?q=23.481286,120.449533" target="_blank" rel="noreferrer" class="btn-main">📍 點我導航到活動地點</a>
             </div>
+            <p class="mt-4 text-sm font-bold text-stone-500">建議提早到場，別錯過摸彩與限量好禮。</p>
           </div>
 
-          <!-- 地圖 embed -->
-          <div class="rounded-2xl overflow-hidden shadow-lg ring-1 ring-amber-100" style="min-height:280px;">
+          <div class="overflow-hidden rounded-[2rem] border border-orange-100 shadow-[0_12px_36px_rgba(251,146,60,0.10)]" style="min-height: 300px;">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d460.5!2d120.449533!3d23.481286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e7763b3fcc6b1%3A0x7c1e7b8d5a9f1234!2z5ZyL5aSu5bqX5Zyf5Lqk5puy!5e0!3m2!1szh-TW!2stw!4v1"
-              width="100%" height="100%" style="border:0; min-height:280px;"
+              width="100%" height="100%" style="border:0; min-height: 300px;"
               allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
         </div>
 
-        <!-- 小提醒 -->
-        <div class="mt-8 card-warm rounded-2xl p-7">
-          <h4 class="serif text-xl font-black text-stone-900 mb-4">小提醒</h4>
-          <ul class="grid sm:grid-cols-2 gap-3 text-stone-600 text-base leading-7">
-            <li class="flex gap-2"><span>🎟</span><span><strong class="text-stone-800">免費入場，不需報名</strong>，直接來就可以。</span></li>
-            <li class="flex gap-2"><span>⏰</span><span>建議提早到場，熱門時段好禮可能提前送完。</span></li>
-            <li class="flex gap-2"><span>👨‍👩‍👧‍👦</span><span>活動適合親子、長輩與一般民眾一同參與。</span></li>
-            <li class="flex gap-2"><span>🕐</span><span>現場將不定時抽出幸運得主，想參加別太晚到。</span></li>
+        <div class="mt-8 soft-panel rounded-[2rem] p-7">
+          <h3 class="serif mb-4 text-xl font-black text-stone-900">小提醒</h3>
+          <ul class="grid gap-3 text-base leading-7 text-stone-600 sm:grid-cols-2">
+            <li class="flex gap-3"><span>🎟</span><span><strong class="text-stone-800">免費入場，不需報名</strong>，直接來就可以。</span></li>
+            <li class="flex gap-3"><span>⏰</span><span>建議提早到場，熱門時段可能提早送完限量好禮。</span></li>
+            <li class="flex gap-3"><span>🎉</span><span>活動期間將不定時抽出幸運得主，需在場才有機會。</span></li>
+            <li class="flex gap-3"><span>👨‍👩‍👧‍👦</span><span>活動適合親子、長輩與一般民眾一同參與。</span></li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- ⑥ 最後 CTA -->
-    <section class="py-20 bg-[#fdf8f2]">
+    <section class="py-20">
       <div class="mx-auto max-w-2xl px-5 text-center">
-        <h3 class="serif text-3xl md:text-4xl font-black text-stone-900 leading-snug">
-          這個週日，<br />帶著家人一起出門走走
-        </h3>
-        <p class="mt-5 text-lg text-stone-500 leading-8">
-          來一場有互動、有好禮、也有溫度的相聚時光。<br />
-          免費入場，歡迎全家一起來！
+        <h2 class="serif text-3xl font-black leading-snug text-stone-900 md:text-4xl">
+          這個週日，<br />把一段溫暖時光留給家人
+        </h2>
+        <p class="mt-5 text-lg leading-8 text-stone-500">
+          有互動、有好禮，也有一個適合全家一起出門的理由。<br />
+          歡迎直接來參加。
         </p>
         <div class="mt-8 flex flex-wrap justify-center gap-4">
-          <a href="https://www.google.com/maps?q=23.481286,120.449533"
-             target="_blank" rel="noreferrer" class="btn-main">
-            📍 點我導航到活動地點
-          </a>
-          <a href="#highlights" class="btn-sub">看活動亮點</a>
+          <a href="https://www.google.com/maps?q=23.481286,120.449533" target="_blank" rel="noreferrer" class="btn-main">📍 立即導航前往</a>
+          <a href="#gifts" class="btn-sub">先看好禮內容</a>
         </div>
-        <p class="mt-4 text-sm text-stone-500 font-bold">免費入場・不需報名・建議提早到場</p>
+        <p class="mt-4 text-sm font-bold text-stone-500">免費入場・不需報名・建議提早到場</p>
       </div>
     </section>
 
-    <!-- 主辦資訊 -->
-    <section class="py-12 bg-amber-50 border-t border-amber-100">
-      <div class="mx-auto max-w-5xl px-5">
-        <div class="grid md:grid-cols-2 gap-8 text-sm text-stone-600">
-          <div>
-            <p class="font-black text-stone-800 mb-2">主辦單位</p>
-            <p>台灣自媒體應用科技學會</p>
-            <p class="font-black text-stone-800 mt-4 mb-2">合辦單位</p>
-            <p>台灣法輪大法學會</p>
-          </div>
-          <div>
-            <p class="font-black text-stone-800 mb-2">聯絡方式</p>
-            <p>聯繫電話：<a href="tel:0912745635" class="hover:text-amber-700 transition">0912-745635</a></p>
-            <p>聯絡人：徐小姐</p>
-          </div>
+    <section class="border-t border-orange-100 bg-orange-50/60 py-12">
+      <div class="mx-auto grid max-w-5xl gap-8 px-5 text-sm text-stone-600 md:grid-cols-2">
+        <div>
+          <p class="mb-2 font-black text-stone-800">主辦單位</p>
+          <p>台灣自媒體應用科技學會</p>
+          <p class="mb-2 mt-4 font-black text-stone-800">合辦單位</p>
+          <p>台灣法輪大法學會</p>
+        </div>
+        <div>
+          <p class="mb-2 font-black text-stone-800">聯絡方式</p>
+          <p>聯繫電話：<a href="tel:0912745635" class="transition hover:text-orange-500">0912-745635</a></p>
+          <p>聯絡人：徐小姐</p>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-stone-800 text-stone-400 py-8">
-    <div class="mx-auto max-w-5xl px-5 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
+  <footer class="bg-stone-800 py-8 text-stone-400">
+    <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-5 text-sm md:flex-row">
       <p>© 2026 雲嘉南「溫馨五月天・善行在人間」園遊會</p>
       <div class="flex gap-6">
-        <a href="#highlights" class="hover:text-amber-300 transition">活動亮點</a>
-        <a href="#why" class="hover:text-amber-300 transition">為什麼來</a>
-        <a href="#location" class="hover:text-amber-300 transition">活動資訊</a>
+        <a href="#reasons" class="transition hover:text-orange-200">為什麼來</a>
+        <a href="#highlights" class="transition hover:text-orange-200">活動亮點</a>
+        <a href="#location" class="transition hover:text-orange-200">活動資訊</a>
       </div>
     </div>
   </footer>
 
   <script>
     const highlights = [
-      { icon: "🎮", title: "智慧闖關體驗", desc: "闖關認識優質媒體與乾淨網路平台，幫助家庭遠離網路霸凌與詐騙。" },
-      { icon: "🎭", title: "舞台節目表演", desc: "舞台表演傳遞溫暖、正向與美德，適合全家一起欣賞。" },
-      { icon: "🍱", title: "職人美食", desc: "精選職人美食攤位，逛得開心也吃得滿足。" },
-      { icon: "🎨", title: "手作與特色攤位", desc: "寫真素描、植染、陶土創意手作等，體驗各種有趣手藝。" },
-      { icon: "🎁", title: "幸運摸彩", desc: "到場可領摸彩券，完成闖關還有贈禮，現場還有不定時驚喜時刻。" },
-      { icon: "🎈", title: "親子遊戲互動", desc: "降落傘、電動汽車、釣魚、桌遊等，讓孩子玩得開心，大人也放心。" },
+      {
+        icon: "🎮",
+        title: "智慧闖關體驗",
+        desc: "邊玩邊認識優質媒體與乾淨網路平台，讓孩子玩得開心，大人也更安心。"
+      },
+      {
+        icon: "🎭",
+        title: "舞台節目表演",
+        desc: "現場有溫暖又輕鬆的舞台表演，適合全家一起停下腳步欣賞。"
+      },
+      {
+        icon: "🍱",
+        title: "職人美食",
+        desc: "精選美食攤位，讓你邊逛邊吃，把週末的好心情一起帶走。"
+      },
+      {
+        icon: "🎨",
+        title: "手作與特色攤位",
+        desc: "有趣的手作體驗與特色攤位，孩子有得玩，大人也能悠閒逛逛。"
+      },
+      {
+        icon: "🎁",
+        title: "摸彩與驚喜好禮",
+        desc: "到場送摸彩券，完成親子闖關再送好禮，現場還有不定時驚喜。"
+      },
+      {
+        icon: "🎈",
+        title: "親子遊戲互動",
+        desc: "讓孩子放電，也讓一家人一起參與互動，留下更有記憶點的週末時光。"
+      }
     ];
 
-    document.getElementById("highlights-grid").innerHTML = highlights.map(h => `
-      <div class="card-warm rounded-2xl p-7">
-        <div class="text-4xl mb-4">${h.icon}</div>
-        <h4 class="serif text-lg font-black text-stone-900 mb-2">${h.title}</h4>
-        <p class="text-stone-500 text-sm leading-6">${h.desc}</p>
+    document.getElementById('highlights-grid').innerHTML = highlights.map(item => `
+      <div class="card-soft rounded-[2rem] p-7">
+        <div class="mb-4 text-4xl">${item.icon}</div>
+        <h3 class="serif mb-2 text-lg font-black text-stone-900">${item.title}</h3>
+        <p class="text-sm leading-7 text-stone-500">${item.desc}</p>
       </div>
-    `).join("");
+    `).join('');
   </script>
 </body>
 </html>
