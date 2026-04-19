@@ -638,8 +638,20 @@ function submitForm() {
     body: JSON.stringify({ adults: adults, kids: kids, age: age })
   })
   .then(function() {
+    // 顯示感謝訊息
     document.getElementById('successMsg').style.display = 'block';
     btn.style.display = 'none';
+
+    // 3秒後重置回初始畫面
+    setTimeout(function() {
+      document.getElementById('successMsg').style.display = 'none';
+      document.getElementById('adults').value = '';
+      document.getElementById('kids').value = '';
+      document.getElementById('age').value = '';
+      btn.textContent = '我們會來！幫我準備好禮 🎉';
+      btn.disabled = false;
+      btn.style.display = 'block';
+    }, 3000);
   })
   .catch(function() {
     alert('送出失敗，請再試一次！');
