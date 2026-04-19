@@ -558,5 +558,41 @@
     </div>
   </footer>
 
+<script>
+function submitForm() {
+  var adults = document.getElementById('adults').value;
+  var kids   = document.getElementById('kids').value;
+  var age    = document.getElementById('age').value;
+
+  // 檢查有沒有都填
+  if (!adults || !kids || !age) {
+    alert('請把三個選項都選一下喔！');
+    return;
+  }
+
+  // 按鈕變成「送出中...」
+  var btn = document.getElementById('submitBtn');
+  btn.textContent = '送出中...';
+  btn.disabled = true;
+
+  // 送資料到 GAS
+  fetch('https://script.google.com/macros/s/AKfycbyvlzq35vTAxjNAAK6S_9c3mtCqvrLaW1uxxCFsxGxPQgSzqPFQw-3nhtZnqOAtlVn7/exec', {
+    method: 'POST',
+    body: JSON.stringify({ adults: adults, kids: kids, age: age })
+  })
+  .then(function() {
+    // 成功：顯示感謝訊息
+    document.getElementById('successMsg').style.display = 'block';
+    btn.style.display = 'none';
+  })
+  .catch(function() {
+    // 失敗：讓人重試
+    alert('送出失敗，請再試一次！');
+    btn.textContent = '我們會來！幫我準備好禮 🎉';
+    btn.disabled = false;
+  });
+}
+</script>
+  
 </body>
 </html>
