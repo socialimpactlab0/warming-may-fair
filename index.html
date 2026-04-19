@@ -547,6 +547,64 @@
     </section>
   </main>
 
+  <!-- ✅ 預計參加表單區塊 -->
+  <section id="join-plan" style="background:#fff8f0;padding:60px 20px;text-align:center;">
+    <p class="section-label mb-3">預計參加</p>
+    <div class="divider mb-5"></div>
+    <h2 class="serif" style="font-size:1.8rem;font-weight:900;margin-bottom:8px;">告訴我們你要來 🎁</h2>
+    <p style="color:#6b5e4e;margin-bottom:32px;font-size:0.95rem;">
+      不算正式報名，讓我們幫你準備好禮，填一下就好！
+    </p>
+    <div style="max-width:400px;margin:0 auto;background:white;border-radius:16px;padding:32px 24px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+
+      <!-- 大人人數 -->
+      <div style="margin-bottom:20px;text-align:left;">
+        <label style="font-weight:bold;display:block;margin-bottom:8px;color:#3a3530;">大人幾位來？</label>
+        <select id="adults" style="width:100%;padding:12px;border:1.5px solid #ddd;border-radius:8px;font-size:1rem;font-family:inherit;">
+          <option value="">請選擇</option>
+          <option value="1">1 位</option>
+          <option value="2">2 位</option>
+          <option value="3+">3 位以上</option>
+        </select>
+      </div>
+
+      <!-- 小孩人數 -->
+      <div style="margin-bottom:20px;text-align:left;">
+        <label style="font-weight:bold;display:block;margin-bottom:8px;color:#3a3530;">小孩幾位來？</label>
+        <select id="kids" style="width:100%;padding:12px;border:1.5px solid #ddd;border-radius:8px;font-size:1rem;font-family:inherit;">
+          <option value="">請選擇</option>
+          <option value="1">1 位</option>
+          <option value="2">2 位</option>
+          <option value="3+">3 位以上</option>
+        </select>
+      </div>
+
+      <!-- 小孩年齡 -->
+      <div style="margin-bottom:28px;text-align:left;">
+        <label style="font-weight:bold;display:block;margin-bottom:8px;color:#3a3530;">小孩年齡大約？</label>
+        <select id="age" style="width:100%;padding:12px;border:1.5px solid #ddd;border-radius:8px;font-size:1rem;font-family:inherit;">
+          <option value="">請選擇</option>
+          <option value="3-5歲">3–5 歲</option>
+          <option value="6-8歲">6–8 歲</option>
+          <option value="9-10歲">9–10 歲</option>
+          <option value="其他年齡">其他年齡</option>
+        </select>
+      </div>
+
+      <!-- 送出按鈕 -->
+      <button id="submitBtn" onclick="submitForm()" style="width:100%;padding:14px;background:linear-gradient(135deg,#e8952a,#f0a830);color:white;font-size:1rem;font-weight:bold;border:none;border-radius:10px;cursor:pointer;font-family:inherit;">
+        我們會來！幫我準備好禮 🎉
+      </button>
+
+      <!-- 送出後的感謝訊息 -->
+      <div id="successMsg" style="display:none;margin-top:20px;">
+        <p style="color:#4caf50;font-size:1.1rem;font-weight:bold;">
+          ✅ 收到了！5/3 見！記得提早到場喔 🌸
+        </p>
+      </div>
+    </div>
+  </section>
+
   <footer class="bg-stone-800 py-7 text-stone-400">
     <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 px-5 text-xs md:flex-row">
       <p>© 2026 嘉義週末親子園遊會</p>
@@ -564,29 +622,24 @@ function submitForm() {
   var kids   = document.getElementById('kids').value;
   var age    = document.getElementById('age').value;
 
-  // 檢查有沒有都填
   if (!adults || !kids || !age) {
     alert('請把三個選項都選一下喔！');
     return;
   }
 
-  // 按鈕變成「送出中...」
   var btn = document.getElementById('submitBtn');
   btn.textContent = '送出中...';
   btn.disabled = true;
 
-  // 送資料到 GAS
   fetch('https://script.google.com/macros/s/AKfycbyvlzq35vTAxjNAAK6S_9c3mtCqvrLaW1uxxCFsxGxPQgSzqPFQw-3nhtZnqOAtlVn7/exec', {
     method: 'POST',
     body: JSON.stringify({ adults: adults, kids: kids, age: age })
   })
   .then(function() {
-    // 成功：顯示感謝訊息
     document.getElementById('successMsg').style.display = 'block';
     btn.style.display = 'none';
   })
   .catch(function() {
-    // 失敗：讓人重試
     alert('送出失敗，請再試一次！');
     btn.textContent = '我們會來！幫我準備好禮 🎉';
     btn.disabled = false;
