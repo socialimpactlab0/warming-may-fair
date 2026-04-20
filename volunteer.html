@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>志工轉發文案｜5/3 嘉義親子園遊會</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fdf8f0;
+      font-family: 'Noto Sans TC', sans-serif;
+      color: #3a3530;
+      min-height: 100vh;
+    }
+
+    /* 頂部說明區 */
+    .header {
+      background: linear-gradient(135deg, #2c2218, #4a3520);
+      color: white;
+      padding: 36px 20px 32px;
+      text-align: center;
+    }
+    .header-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: #e7c070;
+      margin-bottom: 10px;
+    }
+    .header h1 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 900;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .header p {
+      font-size: 0.88rem;
+      color: #c8b898;
+      line-height: 1.8;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* 數據條 */
+    .stats-bar {
+      background: #e8952a;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      text-align: center;
+      color: white;
+    }
+    .stat-num {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      opacity: 0.9;
+    }
+
+    /* 步驟說明 */
+    .how-to {
+      background: #fff8ee;
+      border-bottom: 1px solid #f0e0c0;
+      padding: 20px;
+      text-align: center;
+    }
+    .how-to p {
+      font-size: 0.9rem;
+      color: #6b5e4e;
+      line-height: 1.9;
+    }
+    .how-to strong {
+      color: #b87820;
+    }
+
+    /* 主要內容 */
+    .main {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 24px 16px 60px;
+    }
+
+    /* 波次卡片 */
+    .wave-card {
+      background: white;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(180,130,60,0.10);
+      border: 1px solid #f0e4c8;
+    }
+
+    .wave-header {
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .wave-num {
+      background: #e8952a;
+      color: white;
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .wave-info h2 {
+      font-size: 1rem;
+      font-weight: 900;
+      color: #1e1a14;
+      margin-bottom: 2px;
+    }
+    .wave-time {
+      font-size: 0.8rem;
+      color: #e8952a;
+      font-weight: 700;
+    }
+
+    /* 倒數標籤 */
+    .wave-badge {
+      margin-left: auto;
+      background: #fef3d0;
+      color: #9a6010;
+      border: 1px solid #f0d888;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .wave-badge.urgent {
+      background: #fde8e8;
+      color: #c0392b;
+      border-color: #f5c0c0;
+    }
+
+    /* 文案區 */
+    .wave-body {
+      padding: 0 20px 16px;
+    }
+    .message-box {
+      background: #fdfaf5;
+      border: 1.5px solid #f0e4c8;
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 0.88rem;
+      line-height: 1.9;
+      color: #3a3530;
+      white-space: pre-wrap;
+      word-break: break-all;
+      margin-bottom: 14px;
+      max-height: 220px;
+      overflow-y: auto;
+      user-select: text;
+    }
+
+    /* 複製按鈕 */
+    .copy-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #e8952a, #f0a830);
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: 'Noto Sans TC', sans-serif;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .copy-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(232,149,42,0.35);
+    }
+    .copy-btn.copied {
+      background: linear-gradient(135deg, #4caf50, #43a047);
+    }
+
+    /* 提示說明 */
+    .tip {
+      background: #f0f8ff;
+      border: 1px solid #cce0f8;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.78rem;
+      color: #3a6090;
+      margin-top: 10px;
+      line-height: 1.7;
+    }
+
+    /* 底部 */
+    .footer {
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.78rem;
+      color: #9a8070;
+      border-top: 1px solid #f0e4c8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部 -->
+  <div class="header">
+    <p class="header-label">志工轉發專用</p>
+    <h1>感謝您幫忙轉發<br/>5/3 嘉義親子園遊會 🌸</h1>
+    <p>共有四波發送，每波只要<strong style="color:#e7c070;">點一下「複製文案」</strong>，<br/>貼到 LINE 群組就完成了！</p>
+  </div>
+
+  <!-- 數據條 -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-num">566</span>
+      <span class="stat-label">嘉義家長看過網站</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">12%</span>
+      <span class="stat-label">廣告點擊率（很高！）</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">NT$2</span>
+      <span class="stat-label">每位訪客成本</span>
+    </div>
+  </div>
+
+  <!-- 操作說明 -->
+  <div class="how-to">
+    <p>
+      📋 <strong>使用方法</strong>：找到對應時間的那一波<br/>
+      點「<strong>複製文案</strong>」→ 打開 LINE 群組 → 長按貼上 → 送出
+    </p>
+  </div>
+
+  <div class="main">
+
+    <!-- 第一波 -->
+    <div class="wave-card">
+      <div class="wave-header">
+        <div class="wave-num">1</div>
+        <div class="wave-info">
+          <h2>第一波</h2>
+          <div class="wave-time">📅 4/19（今天）晚上 8 點</div>
+        </div>
+        <div class="wave-badge">今天發送</div>
+      </div>
+      <div class="wave-body">
+        <div class="message-box" id="msg1">🎉 嘉義親子免費活動分享！
+
+下下個週日 5/3（日）
+嘉義中央廣場有一個超棒的親子園遊會
+
+✅ 完全免費・不用報名・直接來
+✅ 闖關、手作、舞台表演通通有
+🌸 限量麻糬＋康乃馨，提早到才搶得到！
+
+👉 活動詳情：
+https://socialimpactlab0.github.io/warming-may-fair/
+
+歡迎轉傳給嘉義的朋友 🙏</div>
+        <button class="copy-btn" onclick="copyMsg('msg1', this)">
+          📋 複製文案，貼到 LINE 群組
+        </button>
+        <div class="tip">💡 複製後，打開 LINE 群組，在輸入框長按選「貼上」再送出即可</div>
+      </div>
+    </div>
+
+    <!-- 第二波 -->
+    <div class="wave-card">
+      <div class="wave-header">
+        <div class="wave-num">2</div>
+        <div class="wave-info">
+          <h2>第二波</h2>
+          <div class="wave-time">📅 4/26（日）晚上 8 點</div>
+        </div>
+        <div class="wave-badge">倒數一週</div>
+      </div>
+      <div class="wave-body">
+        <div class="message-box" id="msg2">📅 倒數一週！
+
+5/3（日）嘉義中央廣場
+親子園遊會・免費・不用報名
+
+這個週末沒排行程的嘉義家長，記得帶孩子來喔！
+🌸 限量麻糬＋康乃馨，數量有限
+
+👉 https://socialimpactlab0.github.io/warming-may-fair/
+
+歡迎轉傳給嘉義的朋友 🙏</div>
+        <button class="copy-btn" onclick="copyMsg('msg2', this)">
+          📋 複製文案，貼到 LINE 群組
+        </button>
+        <div class="tip">💡 請在 4/26（日）晚上 8 點發送效果最好</div>
+      </div>
+    </div>
+
+    <!-- 第三波 -->
+    <div class="wave-card">
+      <div class="wave-header">
+        <div class="wave-num">3</div>
+        <div class="wave-info">
+          <h2>第三波</h2>
+          <div class="wave-time">📅 5/1（五）晚上 7 點</div>
+        </div>
+        <div class="wave-badge urgent">後天就是了！</div>
+      </div>
+      <div class="wave-body">
+        <div class="message-box" id="msg3">⏰ 後天就是了！
+
+5/3（日）嘉義中央廣場
+週末親子園遊會・免費・不用報名
+
+闖關、手作、舞台表演、限量麻糬和康乃馨🌸
+建議早點到，限量好禮搶先拿！
+
+👉 https://socialimpactlab0.github.io/warming-may-fair/
+
+歡迎轉傳給嘉義的朋友 🙏</div>
+        <button class="copy-btn" onclick="copyMsg('msg3', this)">
+          📋 複製文案，貼到 LINE 群組
+        </button>
+        <div class="tip">💡 請在 5/1（五）晚上 7 點發送，那時候大家在想週末要去哪</div>
+      </div>
+    </div>
+
+    <!-- 第四波 -->
+    <div class="wave-card">
+      <div class="wave-header">
+        <div class="wave-num">4</div>
+        <div class="wave-info">
+          <h2>第四波</h2>
+          <div class="wave-time">📅 5/2（六）下午 3 點</div>
+        </div>
+        <div class="wave-badge urgent">明天就是了！</div>
+      </div>
+      <div class="wave-body">
+        <div class="message-box" id="msg4">👉 明天見！
+
+5/3（日）嘉義中央廣場
+親子園遊會 | 免費 | 不用報名
+
+限量麻糬和康乃馨數量有限
+建議提早到場🌸
+
+明天上午 9 點開始，直接來就對了！
+📍 嘉義市民權路 371 號
+
+歡迎轉傳給嘉義的朋友 🙏</div>
+        <button class="copy-btn" onclick="copyMsg('msg4', this)">
+          📋 複製文案，貼到 LINE 群組
+        </button>
+        <div class="tip">💡 請在 5/2（六）下午 3 點發送，這是最後衝刺！</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    感謝您的支持與幫忙 🙏<br/>
+    主辦：台灣自媒體應用科技學會・合辦：台灣法輪大法學會
+  </div>
+
+  <script>
+    function copyMsg(id, btn) {
+      var text = document.getElementById(id).innerText;
+      
+      // 現代瀏覽器
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+          showCopied(btn);
+        }).catch(function() {
+          fallbackCopy(text, btn);
+        });
+      } else {
+        fallbackCopy(text, btn);
+      }
+    }
+
+    function fallbackCopy(text, btn) {
+      // 舊版瀏覽器備用方法
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showCopied(btn);
+      } catch(e) {
+        alert('請手動長按文案區域，選取全部後複製');
+      }
+      document.body.removeChild(ta);
+    }
+
+    function showCopied(btn) {
+      var original = btn.innerHTML;
+      btn.innerHTML = '✅ 已複製！請貼到 LINE 群組';
+      btn.classList.add('copied');
+      setTimeout(function() {
+        btn.innerHTML = original;
+        btn.classList.remove('copied');
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>
