@@ -6,7 +6,7 @@
   <meta name="description" content="2026 嘉義園遊會。5/3(日) 於嘉義市中央廣場舉辦，免費入場、不需報名，到場送摸彩券、闖關再送好禮，老少咸宜、歡迎一起來。" />
   <meta property="og:title" content="週末園遊會｜5/3 嘉義中央廣場" />
   <meta property="og:description" content="免費入場・不需報名・到場送摸彩券・闖關再送好禮，歡迎全家一起來！" />
-  <meta property="og:image" content="https://socialimpactlab0.github.io/warming-may-fair/poster.png" />
+  <meta property="og:image" content="https://socialimpactlab0.github.io/warming-may-fair/poster-desktop.webp" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://socialimpactlab0.github.io/warming-may-fair/" />
   <title>週末園遊會｜5/3 嘉義中央廣場</title>
@@ -333,8 +333,13 @@
         </div>
 
         <div class="flex justify-center">
-          <div style="border-radius:1.5rem;overflow:hidden;box-shadow:0 12px 30px rgba(152,111,46,0.18);border:1px solid #f0e4c8;max-width:380px;width:100%;position:relative;">
-            <img src="./poster.png" alt="週末園遊會活動視覺：大人小孩在戶外廣場參與活動" loading="lazy" decoding="async" style="width:100%;display:block;" />
+          <div style="border-radius:1.5rem;overflow:hidden;box-shadow:0 12px 30px rgba(152,111,46,0.18);border:1px solid #f0e4c8;max-width:520px;width:100%;position:relative;">
+            <picture>
+              <!-- 手機版：4:5 直式圖，讓手機畫面更清楚、不會太扁 -->
+              <source media="(max-width: 768px)" srcset="./poster-mobile.webp" type="image/webp">
+              <!-- 電腦版：16:9 橫式圖，適合桌機首頁區塊 -->
+              <img src="./poster-desktop.webp" alt="週末園遊會活動視覺：家人、朋友與長輩在戶外廣場一起逛園遊會" loading="eager" decoding="async" fetchpriority="high" style="width:100%;display:block;height:auto;" />
+            </picture>
             <div style="position:absolute;top:12px;right:12px;background:#e8952a;color:#fff;font-size:0.75rem;font-weight:900;padding:6px 12px;border-radius:9999px;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
               5/3 這個週日
             </div>
